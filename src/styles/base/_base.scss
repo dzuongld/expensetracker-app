@@ -1,0 +1,23 @@
+//rem - 1 rem = 16px
+
+html {
+    font-size: 62.5%; // to make it easier to convert rem to px
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $m_size;
+    background: white;
+}
+
+button {
+    cursor: pointer; // set pointer to hovered button
+}
+
+button:disabled {
+    cursor: default; // remove pointer when button is disabled
+}
+
+.is-active {
+    font-weight: bold;
+}
