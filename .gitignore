@@ -1,5 +1,6 @@
 node_modules/
 src/test/
+src/tests/add.test.js
 src/utils.js
 typings/
 .vscode/

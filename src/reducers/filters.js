@@ -8,7 +8,7 @@ const filterReducerDefault = {
     startDate: moment().startOf('month'), //beginning of current month
     endDate: moment().endOf('month') //end of current month
 };
-const filterReducer = (state=filterReducerDefault, action) => {
+export default (state=filterReducerDefault, action) => {
     switch (action.type){
         case 'SET_TEXT_FILTER':
             return {
@@ -18,12 +18,12 @@ const filterReducer = (state=filterReducerDefault, action) => {
         case 'SORT_BY_DATE':
             return {
                 ...state,
-                sortBy: action.sortBy
+                sortBy: 'date'
             };
         case 'SORT_BY_AMOUNT':
             return {
                 ...state,
-                sortBy: action.sortBy
+                sortBy: 'amount'
             };
         case 'SET_START_DATE':
             return {
@@ -39,5 +39,3 @@ const filterReducer = (state=filterReducerDefault, action) => {
             return state;
     }
 }
-
-export default filterReducer;

@@ -1,11 +1,11 @@
 import React from 'react';
 import 'react-dates/initialize';
 import {SingleDatePicker} from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css'
+
 import moment from 'moment'; //moment.js
 
-const now = moment();
-console.log(now.format('MMM Do YYYY'));
+// const now = moment();
+// console.log(now.format('MMM Do YYYY'));
 
 //reusable in both add and edit pages
 export default class ExpenseForm extends React.Component {
