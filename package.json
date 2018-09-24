@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack --watch",
+    "build:dev": "webpack --watch",
+    "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
     "test": "jest --config=jest.config.json"
@@ -22,6 +23,7 @@
     "enzyme": "^3.4.4",
     "enzyme-adapter-react-16": "^1.2.0",
     "enzyme-to-json": "^3.3.4",
+    "extract-text-webpack-plugin": "^3.0.2",
     "jest": "^23.5.0",
     "live-server": "^1.2.0",
     "moment": "^2.22.2",
@@ -41,10 +43,11 @@
     "typescript": "^3.0.1",
     "uuid": "^3.3.2",
     "validator": "^10.6.0",
-    "webpack": "^4.16.3",
+    "webpack": "^4.19.1",
     "webpack-dev-server": "^3.1.5"
   },
   "devDependencies": {
+    "mini-css-extract-plugin": "^0.4.3",
     "webpack-cli": "^3.1.0"
   }
 }
