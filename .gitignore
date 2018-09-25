@@ -2,5 +2,9 @@ node_modules/
 src/test/
 src/tests/add.test.js
 src/utils.js
+public/bundle.js
+public/bundle.js.map
+public/styles.css
+public/styles.css.map
 typings/
 .vscode/
