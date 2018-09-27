@@ -5,3 +5,5 @@ src/utils.js
 public/dist/
 typings/
 .vscode/
+.env.test
+.env.development
