@@ -2,6 +2,7 @@ import React from 'react';
 import ExpenseForm from './ExpenseForm';
 import { connect } from 'react-redux';
 import { startEditExpense, startRemoveExpense } from '../actions/expenses';
+import ConfirmationModal from './ConfirmationModal';
 
 //edit existing expenses
 //react-router passes props in and some can be useful
@@ -25,6 +26,10 @@ import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 
 export class EditExpensePage extends React.Component {
 
+    state = {
+        removeClicked: false
+    };
+
     onSubmit = (expense) => {
         this.props.startEditExpense(this.props.expense.id, expense);
         this.props.history.push('/');
@@ -33,6 +38,14 @@ export class EditExpensePage extends React.Component {
     onRemove = () => {
         this.props.startRemoveExpense({ id: this.props.expense.id });
         this.props.history.push('/');
+    }
+
+    cancelRemove = () => {
+        this.setState(() => ({ removeClicked: false }));
+    }
+
+    clickOnRemove = () => {
+        this.setState(() => ({ removeClicked: true }));
     }
 
     render() {
@@ -48,13 +61,17 @@ export class EditExpensePage extends React.Component {
                         expense={this.props.expense}
                         onSubmit={this.onSubmit}
                     />
-                    <button 
+                    <button
                         className='button--secondary'
-                        onClick={this.onRemove}
+                        onClick={this.clickOnRemove}
                     >Remove Expense
                     </button>
                 </div>
-                
+                <ConfirmationModal
+                    removeConfirmed={this.onRemove}
+                    removeClicked={this.state.removeClicked}
+                    cancelRemove={this.cancelRemove}
+                />
             </div>
         );
     }
@@ -68,7 +85,7 @@ const mapStateToProps = (state, props) => {
     });
 }
 
-const mapDispatchToProps = (dispatch,props) => ({
+const mapDispatchToProps = (dispatch, props) => ({
     startEditExpense: (id, expense) => dispatch(startEditExpense(id, expense)),
     startRemoveExpense: (data) => dispatch(startRemoveExpense(data))
 });

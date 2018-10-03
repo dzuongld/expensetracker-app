@@ -20,7 +20,7 @@ module.exports = (env) => {
     const isProduction = env === "production"; //check for mode
 
     return {
-        entry: './src/app.js', //file to be loaded
+        entry: ['babel-polyfill','./src/app.js'], //file to be loaded, can be an array other than string
         output: {
             path: path.join(__dirname, 'public', 'dist'), //must be absolute
             filename: 'bundle.js'

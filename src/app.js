@@ -11,7 +11,8 @@ import { login, logout } from './actions/auth';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
-import { firebase } from './firebase/firebase';
+import { auth } from './firebase/firebase';
+import LoadingPage from './components/LoadingPage';
 // import './test/promises';
 
 const store = configureStore();
@@ -47,12 +48,12 @@ const renderApp = () => {
     }
 }
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage></LoadingPage>, document.getElementById('app'));
 
 
 //when authentication changes
 //only run once when the app loads
-firebase.auth().onAuthStateChanged((user) => {
+auth.onAuthStateChanged((user) => {
     //if logged in
     if (user) {
         store.dispatch(login(user.uid));

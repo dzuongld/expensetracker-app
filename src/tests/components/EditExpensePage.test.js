@@ -13,7 +13,8 @@ beforeEach(() => {
         startRemoveExpense={startRemoveExpense} 
         expense={expenses[1]} 
         history={history} 
-    />);
+        />)     
+        
 });
 
 test('should render EditExpensePage correctly', () => {
@@ -26,8 +27,8 @@ test('should handle onSubmit', () => {
     expect(startEditExpense).toHaveBeenLastCalledWith(expenses[1].id ,expenses[1]);
 });
 
-test('should handle onRemove', () => {
-    wrapper.find('button').simulate('click');
-    expect(history.push).toHaveBeenLastCalledWith('/');
-    expect(startRemoveExpense).toHaveBeenLastCalledWith({ id: expenses[1].id });
-});
+// test('should handle onRemove', () => {
+//     wrapper.find('button').simulate('click');
+//     expect(history.push).toHaveBeenLastCalledWith('/');
+//     expect(startRemoveExpense).toHaveBeenLastCalledWith({ id: expenses[1].id });
+// });

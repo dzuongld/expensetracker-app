@@ -1,0 +1,49 @@
+.ReactModalPortal > div { //target div's that are direct descendants
+    opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+    align-items: center; //set modal box to the middle vertically
+    display: flex;
+    justify-content: center; //set modal box to the middle horizontally
+    transition: opacity 200ms ease-in-out; //transition style & time
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+.modal {
+    background: $light-blue;
+    color: white;
+    max-width: 30rem; //prevent being overstretched by super long contents
+    outline: none; //remove modal border
+    padding: $l-size;
+    text-align: center;
+   
+}
+
+.modal__title {
+    margin: 0 0 $m-size 0;
+}
+
+.modal__body {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0 0 $l-size 0;
+    word-break: break-all; //break words to fit the UI
+}
+
+.modal__item {
+    margin: 0 2rem;
+}
+
+.modal__group {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
