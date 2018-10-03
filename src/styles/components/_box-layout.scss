@@ -1,0 +1,32 @@
+// use in login page
+
+.box-layout {
+    background: url('/images/bg.jpg');
+
+    // cover container with the image
+    background-size: cover;
+
+    // take full screen, must set manually
+    height: 100vh;
+    width: 100vw;
+
+    //put box in the middle
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-layout__box {
+    //from scss, create transparent background for box
+    background: fade-out($color: white, $amount: 0.15);
+
+    border-radius: 3px;
+    text-align: center;
+    width: 50rem;
+    padding: $l-size $m-size;
+}
+
+.box-layout__title {
+    margin: 0 0 $m-size 0; //bottom
+    line-height: 1;
+}

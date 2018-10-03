@@ -1,0 +1,41 @@
+.button {
+    background: $blue;
+    color: white;
+    
+    border: none; // remove border
+    padding: $s-size;
+
+    font-size: $font-size-large;
+    font-weight: 300;
+    
+    // disguise link as button
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1;
+}
+
+// logout button
+.button--link {
+    background: none;
+}
+
+.button--secondary {
+    @extend .button;
+    background: #888888
+}
+
+.btn-google {
+    background-image:url('/images/btn_google_signin_light_normal_web@2x.png');
+    background-repeat:no-repeat;
+    background-size: cover;
+    border: none;
+    width: 191px;
+    height: 46px;
+    padding: 0%;
+    border-radius: 4px
+}
+
+.btn-google:hover {
+    background-image:url('/images/btn_google_signin_light_focus_web@2x.png');
+    
+}

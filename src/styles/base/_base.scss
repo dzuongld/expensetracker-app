@@ -7,7 +7,8 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: $m_size;
-    background: white;
+    color: $dark-grey;
+    line-height: 1.6;
 }
 
 button {
@@ -20,4 +21,8 @@ button:disabled {
 
 .is-active {
     font-weight: bold;
+}
+
+* {
+    box-sizing: border-box; //content-box is default
 }

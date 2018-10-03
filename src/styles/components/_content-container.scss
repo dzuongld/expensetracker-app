@@ -1,0 +1,5 @@
+.content-container {
+    max-width: 80rem;
+    margin: 0 auto; //evenly distribute margin on left and right when surpass 80 rem
+    padding: 0 $m-size; //no content will be pushed to the edge
+}

@@ -1,0 +1,19 @@
+// to avoid clashing with 3rd party libraries
+
+.text-input {
+    border: 1px solid #cacccd;
+    height: 47px;
+    font-size: $font-size-large;
+    font-weight: 300;
+    padding: $s-size;
+}
+
+.select {
+    @extend .text-input; //inheritance
+    
+}
+
+.text-area {
+    @extend .text-input;
+    height: 10rem;
+}
