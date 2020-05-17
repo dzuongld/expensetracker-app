@@ -37,7 +37,7 @@ exports[`should render EditExpensePage correctly 1`] = `
       Remove Expense
     </button>
   </div>
-  <Component
+  <_default
     cancelRemove={[Function]}
     removeClicked={false}
     removeConfirmed={[Function]}
